@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // Create a function that takes an array of items and checks if the last item matches the rest of the array.
+    //
+    function matchLastItem(arr) {
+        var lastItem = arr[arr.length - 1];
+        var allOthers = "";
+        for (var i = 0; i < arr.length - 1; i++)  {
+            allOthers += arr[i];
+        }
+        if (allOthers === lastItem) {
+            return true;
+        } else {
+            return false;
+        }
+
+    };
+
+    console.log(matchLastItem((['cow', 'pig', 'cow', 'cowpigcow'])));
+    console.log(matchLastItem(([0, 1, 2, 3, 4, 5, '12345'])));
+    console.log(matchLastItem((['taco', 'pizza', 'macaroni', 'tacoPizzaMacaroni'])));
+
+
+
+
+    // Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
+
+
+    function formatPhoneNumber(numbers) {
+        var format = "(xxx) xxx-xxxx";
+        for(var i = 0; i < numbers.length; i++) {
+            format = format.replace('x', numbers[i]);
+        }
+        return format
+    }
+
+    console.log(formatPhoneNumber(([5, 1, 9, 5, 5, 5, 4, 4, 6, 8])));
+    console.log(formatPhoneNumber(([2, 1, 0, 9, 1, 2, 7, 0, 7, 9])));
+
+
+    //Create a function that takes an array of items, removes all duplicate items and returns a new array in the same sequential order as the old array (minus duplicates).
+
+    function removeDups(arr) {
+        var unique = {};
+        arr.forEach(function(i) {
+            if(!unique[i]) {
+                unique[i] = true;
+            }
+        });
+        return Object.keys(unique);
+    }
+
+    console.log(removeDups((['Chelsea', 'Adra', 'Alex', 'Kim', 'Megan', 'Alex', 'Monique', 'Caysen', 'Brycen', 'Kim'])));
+    console.log(removeDups((['Sally', 'Sally', 'Stacy', 'Susan', 'Sally', 'Sarah', 'Stacy', 'Sally', 'Susan', 'Stacy'])));
+
+
+
+
+</script>
+</body>
+</html>
