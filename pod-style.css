@@ -6,3 +6,7 @@ h1 {
 p {
     font-family: 'Poppins', sans-serif;
 }
+
+#create-post {
+    height: 100vh;
+}
